@@ -1,3 +1,69 @@
+function animateDelete () {
+    dispDelay = 0
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # # # .
+        . # # # .
+        . . . . .
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # . # #
+        # # # # #
+        # # # # #
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        # # . # #
+        # . . . #
+        . . . . .
+        # . . . #
+        # # . # #
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        # . . . #
+        . . . . .
+        . . . . .
+        . . . . .
+        # . . . #
+        `)
+    basic.pause(dispDelay)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+}
 datalogger.onLogFull(function () {
     logging = false
     basic.showIcon(IconNames.No)
@@ -11,9 +77,10 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    basic.showString("Deleting log")
+    animateDelete()
     datalogger.deleteLog(datalogger.DeleteType.Fast)
 })
+let dispDelay = 0
 let logging = false
 logging = false
 datalogger.setColumns([
