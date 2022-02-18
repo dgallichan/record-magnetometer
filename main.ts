@@ -88,10 +88,7 @@ datalogger.setColumns([
 "mx",
 "my",
 "mz",
-"mmag",
-"ax",
-"ay",
-"az"
+"mmag"
 ])
 basic.showLeds(`
     # # # # #
@@ -102,14 +99,6 @@ basic.showLeds(`
     `)
 loops.everyInterval(50, function () {
     if (logging) {
-        datalogger.logData([
-        datalogger.createCV("mx", input.magneticForce(Dimension.X)),
-        datalogger.createCV("my", input.magneticForce(Dimension.Y)),
-        datalogger.createCV("mz", input.magneticForce(Dimension.Z)),
-        datalogger.createCV("mmag", input.magneticForce(Dimension.Strength)),
-        datalogger.createCV("ax", input.acceleration(Dimension.X)),
-        datalogger.createCV("ay", input.acceleration(Dimension.Y)),
-        datalogger.createCV("az", input.acceleration(Dimension.Z))
-        ])
+        datalogger.logData([datalogger.createCV("mx", input.magneticForce(Dimension.X)), datalogger.createCV("my", input.magneticForce(Dimension.Y)), datalogger.createCV("mz", input.magneticForce(Dimension.Z))])
     }
 })
