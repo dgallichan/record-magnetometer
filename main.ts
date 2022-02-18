@@ -84,12 +84,7 @@ let dispDelay = 0
 let logging = false
 datalogger.mirrorToSerial(false)
 logging = false
-datalogger.setColumns([
-"mx",
-"my",
-"mz",
-"mmag"
-])
+datalogger.setColumns(["mx", "my", "mz"])
 basic.showLeds(`
     # # # # #
     # # # # .
