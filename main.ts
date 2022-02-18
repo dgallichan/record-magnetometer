@@ -97,10 +97,10 @@ basic.showLeds(`
     # # # # #
     # # # # .
     # # # . .
-    # # . . .
-    # . . . .
+    # # . # .
+    # . . . #
     `)
-loops.everyInterval(20, function () {
+loops.everyInterval(50, function () {
     if (logging) {
         datalogger.logData([
         datalogger.createCV("mx", input.magneticForce(Dimension.X)),
