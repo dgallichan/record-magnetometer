@@ -94,12 +94,12 @@ datalogger.setColumns([
 ])
 basic.showLeds(`
     # # # # #
-    # . # . #
-    # # # # #
-    # . # . #
-    # # # # #
+    # # # # .
+    # # # . .
+    # # . . .
+    # . . . .
     `)
-loops.everyInterval(100, function () {
+loops.everyInterval(20, function () {
     if (logging) {
         datalogger.logData([
         datalogger.createCV("mx", input.magneticForce(Dimension.X)),
